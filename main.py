@@ -13,7 +13,7 @@ def idiom_select(x):                               #参数为x的成语，返回
             base = f.readlines()
             random.shuffle(base)
             for i in base:
-                if i[:-1] == x or len(i) != 4:
+                if i[:-1] == x or len(i) != 5:
                     continue
                 if lazy_pinyin(i[0])==lazy_pinyin(x[-1]):
                     return i[:-1]
