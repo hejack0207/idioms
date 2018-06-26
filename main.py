@@ -36,7 +36,6 @@ def main():
                 print('\n'.join(tongxing))
             else:
                 print("不存在，结束")
-                break
         except EOFError as error:
             break
 
