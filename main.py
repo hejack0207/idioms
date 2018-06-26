@@ -1,14 +1,14 @@
 import random
 from pypinyin import lazy_pinyin
 
-def idiom_exists(CY):  #判断成语是否存在
+def idiom_exists(CY): 
     with open('idiom.txt','r') as f:
         for i in set(f.readlines()):
             if CY ==i.strip():
                 return True
         return False
 
-def idiom_select(x):                               #参数为x的成语，返回该成语的接龙匹配成语
+def idiom_select(x): 
         with open('idiom.txt','r') as f:
             base = f.readlines()
             random.shuffle(base)
@@ -20,10 +20,10 @@ def idiom_select(x):                               #参数为x的成语，返回
 
 def main():
     while True:
-        x = input("请输入成语：")
+        x = input("请输入：")
         if idiom_exists(x):
             print(idiom_select(x))
         else:
-            print("该成语不存在，结束")
+            print("不存在，结束")
             break
 main()
