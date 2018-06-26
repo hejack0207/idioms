@@ -29,7 +29,7 @@ def idiom_select(x):
 
 def main():
     while True:
-        x = input("请输入：")
+        x = input()
         if idiom_exists(x):
             tongxing, tongyin = idiom_select(x)
             print('\n'.join(tongxing))
