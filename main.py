@@ -18,7 +18,7 @@ def idiom_select(x):
         base = f.readlines()
         random.shuffle(base)
         for i in base:
-            if i[:-1] == x or len(i) != 5:
+            if i[:-1] == x:
                 continue
             if i[0]==x[-1]:
                 tongxing.append(i[:-1])
