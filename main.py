@@ -29,11 +29,15 @@ def idiom_select(x):
 
 def main():
     while True:
-        x = input()
-        if idiom_exists(x):
-            tongxing, tongyin = idiom_select(x)
-            print('\n'.join(tongxing))
-        else:
-            print("不存在，结束")
+        try:
+            x = input()
+            if idiom_exists(x):
+                tongxing, tongyin = idiom_select(x)
+                print('\n'.join(tongxing))
+            else:
+                print("不存在，结束")
+                break
+        except EOFError as error:
             break
+
 main()
