@@ -69,10 +69,12 @@ def shou_wei_zi():
         print(len(wy))
         szs,wzs=set(sz.keys()),set(wz.keys())
         sys,wys=set(sy.keys()),set(wy.keys())
-        print("{} in both,{} only in shouzi,{} in weizi".format(len(szs & wzs),len(szs - wzs), len(wzs - szs)))
-        print("{} in both,{} only in shouyin,{} in weiyin".format(len(sys & wys),len(sys - wys), len(wys - sys)))
+        print("{} only in shouzi".format(szs - wzs))
+        print("{} only in weizi".format(wzs - szs))
         print("{} only in shouyin".format(sys - wys))
         print("{} only in weiyin".format(wys - sys))
+        print("{} in both,{} only in shouzi,{} in weizi".format(len(szs & wzs),len(szs - wzs), len(wzs - szs)))
+        print("{} in both,{} only in shouyin,{} in weiyin".format(len(sys & wys),len(sys - wys), len(wys - sys)))
 
 
 def interactive():
