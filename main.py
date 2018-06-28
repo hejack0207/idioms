@@ -42,12 +42,37 @@ def shou_wei_zi():
 
         sz_sorted = sorted(sz.items(), key=lambda i:i[1]) 
         wz_sorted = sorted(wz.items(), key=lambda i:i[1]) 
-        for k,v in sz_sorted:
-            print("{0:s},{1:d}".format(k,v))
+        #for k,v in sz_sorted:
+        #    print("{0:s},{1:d}".format(k,v))
+        sy = dict()
+        wy = dict()
+        for z in sz:
+            zy = str(lazy_pinyin(z))
+            if zy in sy:
+                sy[zy] = sy[zy]+sz[z]
+            else:
+                sy[zy] = sz[z]
+        for z in wz:
+            zy = str(lazy_pinyin(z))
+            if zy in wy:
+                wy[zy] = wy[zy]+wz[z]
+            else:
+                wy[zy] = wz[z]
+        sy_sorted = sorted(sy.items(), key=lambda i:i[1]) 
+        wy_sorted = sorted(wy.items(), key=lambda i:i[1]) 
+        #for k,v in sy_sorted:
+        #    print("{0:s},{1:d}".format(k,v))
 
         print(len(sz))
+        print(len(wz))
+        print(len(sy))
+        print(len(wy))
         szs,wzs=set(sz.keys()),set(wz.keys())
+        sys,wys=set(sy.keys()),set(wy.keys())
         print("{} in both,{} only in shouzi,{} in weizi".format(len(szs & wzs),len(szs - wzs), len(wzs - szs)))
+        print("{} in both,{} only in shouyin,{} in weiyin".format(len(sys & wys),len(sys - wys), len(wys - sys)))
+        print("{} only in shouyin".format(sys - wys))
+        print("{} only in weiyin".format(wys - sys))
 
 
 def interactive():
