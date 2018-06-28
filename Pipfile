@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 pypinyin = "*"
+fire = "*"
 
 [dev-packages]
 
