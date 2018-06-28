@@ -44,16 +44,19 @@ def shou_wei_zi():
         wz_sorted = sorted(wz.items(), key=lambda i:i[1]) 
         #for k,v in sz_sorted:
         #    print("{0:s},{1:d}".format(k,v))
+
         sy = dict()
         wy = dict()
         for z in sz:
-            zy = str(lazy_pinyin(z))
+            zy = ''.join(lazy_pinyin(z))
+            #zy = lazy_pinyin(z)[0]
             if zy in sy:
                 sy[zy] = sy[zy]+sz[z]
             else:
                 sy[zy] = sz[z]
         for z in wz:
-            zy = str(lazy_pinyin(z))
+            zy = ''.join(lazy_pinyin(z))
+            #zy = lazy_pinyin(z)[0]
             if zy in wy:
                 wy[zy] = wy[zy]+wz[z]
             else:
